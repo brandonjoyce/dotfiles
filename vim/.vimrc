@@ -37,8 +37,16 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+:imap jj <Esc>
+nnoremap K <C-W><C-L>
+nnoremap J <C-W><C-H>
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
+"PHP set tabs to 4-spaces
+au Filetype php setlocal noexpandtab
+au Filetype php setlocal ts=4
+au Filetype php setlocal sw=4
+au Filetype php setlocal sts=4
