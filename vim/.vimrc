@@ -14,10 +14,15 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+"Always show airline
+set laststatus=2
 let &t_Co = 256
 set listchars=trail:💩
 colorscheme vividchalk
