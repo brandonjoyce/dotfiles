@@ -25,6 +25,9 @@ let g:airline_powerline_fonts = 1
 let g:airline_section_a = '%3c'
 let g:airline_section_z = ''
 
+" focused window 70%
+let &winheight = &lines * 7 / 10
+
 "Always show airline
 set laststatus=2
 let &t_Co = 256

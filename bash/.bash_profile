@@ -6,3 +6,4 @@ git config --global core.editor "/usr/bin/vim"
 source ~/.git_complete
 source ~/.git_ps1
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+export BOXEN_REDIS_IP=192.168.33.10
