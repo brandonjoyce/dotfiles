@@ -43,7 +43,11 @@ set expandtab
 set backspace=indent,eol,start
 set autoindent
 set copyindent
-set number
+set relativenumber
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 set shiftround
 set showmatch
 set ignorecase
