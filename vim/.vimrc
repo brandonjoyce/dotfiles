@@ -23,7 +23,7 @@ filetype plugin indent on    " required
 
 " Airline config
 let g:airline_powerline_fonts = 1
-let g:airline_section_a = '%3c'
+let g:airline_section_a = '%4l,%3c'
 let g:airline_section_z = ''
 
 " focused window 50%
