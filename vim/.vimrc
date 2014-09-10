@@ -61,3 +61,8 @@ au Filetype php setlocal noexpandtab
 au Filetype php setlocal ts=4
 au Filetype php setlocal sw=4
 au Filetype php setlocal sts=4
+"Javascript set tabs to 4-spaces
+au Filetype js setlocal noexpandtab
+au Filetype js setlocal ts=4
+au Filetype js setlocal sw=4
+au Filetype js setlocal sts=4
