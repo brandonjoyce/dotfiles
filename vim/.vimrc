@@ -35,6 +35,7 @@ let &t_Co = 256
 set listchars=trail:💩
 colorscheme vividchalk
 syntax on
+set number
 set nowrap
 set tabstop=2
 set softtabstop=2
@@ -43,11 +44,6 @@ set expandtab
 set backspace=indent,eol,start
 set autoindent
 set copyindent
-set relativenumber
-:au FocusLost * :set number
-:au FocusGained * :set relativenumber
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
 set shiftround
 set showmatch
 set ignorecase
