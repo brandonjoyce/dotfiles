@@ -1,0 +1,40 @@
+# ~/.tmuxinator/specd.yml
+
+name: specd
+root: ~/Source/me/bark
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - web:
+      layout: main-vertical
+      panes:
+        - vim:
+          - cd specd-web
+          - vim app.js
+        - server:
+          - cd specd-web
+          - foreman start 
+  - api:
+      layout: main-vertical
+      panes:
+        - vim:
+          - cd specd-api
+          - vim Gemfile 
+        - server:
+          - cd specd-api
+          - chruby 2.0.0
+          - bundle exec rails s 
