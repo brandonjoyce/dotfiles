@@ -17,6 +17,8 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'csexton/trailertrash.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -51,7 +53,6 @@ set smartcase
 set hlsearch
 set incsearch
 :imap jj <Esc>
-:nmap <CR> o<Esc>k 
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
@@ -67,3 +68,12 @@ au Filetype js setlocal noexpandtab
 au Filetype js setlocal ts=4
 au Filetype js setlocal sw=4
 au Filetype js setlocal sts=4
+
+let mapleader=","
+map <Leader>w :w<Enter>
+map <Leader>q :q<Enter>
+map <Tab> <C-P>
+
+" Trim whitespace on save, highight whitespace
+autocmd BufWritePre * :TrailerTrim
+hi UnwantedTrailerTrash guibg=red ctermbg=red

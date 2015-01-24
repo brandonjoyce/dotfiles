@@ -1,5 +1,4 @@
 source /usr/local/share/chruby/chruby.sh
-chruby ruby 2.0
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 git config --global core.editor "/usr/bin/vim"
@@ -10,5 +9,13 @@ export BOXEN_REDIS_IP=192.168.33.10
 eval "$(ssh-agent)"
 ssh-add ~/.ssh/id_rsa
 ssh-add ~/.ssh/pair_rsa
+ssh-add ~/.ssh/al_rsa
 alias be='bundle exec'
+alias rs='bundle exec rspec'
+alias ci='git commit -v'
+alias s='git status'
+alias d='git diff'
+alias gl='git log'
 export EDITOR='vim'
+chruby 2.0.0
+source ~/.secrets
