@@ -18,6 +18,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'csexton/trailertrash.vim'
+Plugin 'git@github.com:scrooloose/nerdcommenter.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,6 +53,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+set colorcolumn=80
 :imap jj <Esc>
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
