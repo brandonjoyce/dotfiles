@@ -27,14 +27,14 @@ windows:
           - vim app.js
         - server:
           - cd specd-web
-          - foreman start 
+          - foreman start
   - api:
       layout: main-vertical
       panes:
         - vim:
           - cd specd-api
-          - vim Gemfile 
+          - vim Gemfile
         - server:
           - cd specd-api
           - chruby 2.0.0
-          - bundle exec rails s 
+          - foreman run bundle exec rails s
