@@ -19,6 +19,7 @@ Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'csexton/trailertrash.vim'
 Plugin 'git@github.com:scrooloose/nerdcommenter.git'
+Plugin 'godlygeek/tabular'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,3 +80,36 @@ map <Tab> <C-P>
 " Trim whitespace on save, highight whitespace
 autocmd BufWritePre * :TrailerTrim
 hi UnwantedTrailerTrash guibg=red ctermbg=red
+
+" Tabularize Stuff
+inoremap <silent> = =<Esc>:call <SID>ealign()<CR>a
+function! s:ealign()
+  let p = '^.*=\s.*$'
+  if exists(':Tabularize') && getline('.') =~# '^.*=' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^=]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*=\s*\zs.*'))
+    Tabularize/=/l1
+    normal! 0
+    call search(repeat('[^=]*=',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+inoremap <silent> { {<Esc>:call <SID>curlyalign()<CR>a
+function! s:curlyalign()
+  let p = '^.*{\s.*$'
+  if exists(':Tabularize') && getline('.') =~# '^.*{' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^{]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*{\s*\zs.*'))
+    Tabularize/{/l1
+    normal! 0
+    call search(repeat('[^{]*{',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+" Tabularize mappings
+nmap<Leader>t= :Tabularize /=<CR>
+vmap<Leader>t= :Tabularize /=<CR>
+nmap<Leader>t: :Tabularize /:\zs<CR>
+vmap<Leader>t: :Tabularize /:\zs<CR>
+nmap<Leader>t{ :Tabularize /{<CR>
+vmap<Leader>t{ :Tabularize /{<CR>

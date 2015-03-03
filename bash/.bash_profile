@@ -20,6 +20,7 @@ alias pull='git pull'
 alias co='git checkout'
 alias a='git add'
 alias serve='python -mSimpleHTTPServer'
+alias cop='bundle exec rubocop'
 export EDITOR='vim'
 chruby 2.0.0
 source ~/.secrets
