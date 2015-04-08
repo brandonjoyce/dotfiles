@@ -1,7 +1,7 @@
 # ~/.tmuxinator/specd.yml
 
 name: specd
-root: ~/Source/me/bark
+root: ~/Source/bark
 
 # Optional tmux socket
 # socket_name: foo

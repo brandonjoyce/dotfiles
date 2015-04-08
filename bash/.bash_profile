@@ -21,6 +21,8 @@ alias co='git checkout'
 alias a='git add'
 alias serve='python -mSimpleHTTPServer'
 alias cop='bundle exec rubocop'
+alias pair='git config user.name "Brandon Joyce & Ryan Bone" && git config user.email "brandon-ryan@covermymeds.com"'
+alias justme='git config user.name "Brandon Joyce" && git config user.email "bjoyce@covermymeds.com"'
 export EDITOR='vim'
 chruby 2.0.0
 source ~/.secrets

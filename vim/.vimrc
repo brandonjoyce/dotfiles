@@ -20,10 +20,25 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'csexton/trailertrash.vim'
 Plugin 'git@github.com:scrooloose/nerdcommenter.git'
 Plugin 'godlygeek/tabular'
+"" OmniSharp Stuff
+"Plugin 'OmniSharp/omnisharp-vim.git'
+"Plugin 'tpope/vim-dispatch.git'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'OrangeT/vim-csharp'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Airline config
 let g:airline_powerline_fonts = 1
@@ -81,31 +96,6 @@ map <Tab> <C-P>
 autocmd BufWritePre * :TrailerTrim
 hi UnwantedTrailerTrash guibg=red ctermbg=red
 
-" Tabularize Stuff
-inoremap <silent> = =<Esc>:call <SID>ealign()<CR>a
-function! s:ealign()
-  let p = '^.*=\s.*$'
-  if exists(':Tabularize') && getline('.') =~# '^.*=' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^=]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*=\s*\zs.*'))
-    Tabularize/=/l1
-    normal! 0
-    call search(repeat('[^=]*=',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-
-inoremap <silent> { {<Esc>:call <SID>curlyalign()<CR>a
-function! s:curlyalign()
-  let p = '^.*{\s.*$'
-  if exists(':Tabularize') && getline('.') =~# '^.*{' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^{]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*{\s*\zs.*'))
-    Tabularize/{/l1
-    normal! 0
-    call search(repeat('[^{]*{',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-
 " Tabularize mappings
 nmap<Leader>t= :Tabularize /=<CR>
 vmap<Leader>t= :Tabularize /=<CR>
@@ -113,3 +103,37 @@ nmap<Leader>t: :Tabularize /:\zs<CR>
 vmap<Leader>t: :Tabularize /:\zs<CR>
 nmap<Leader>t{ :Tabularize /{<CR>
 vmap<Leader>t{ :Tabularize /{<CR>
+
+" Ctrl-c/x to clipboard
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
+
+" XML formatting
+function! DoPrettyXML()
+  " save the filetype so we can restore it later
+  let l:origft = &ft
+  set ft=
+  " delete the xml header if it exists. This will
+  " permit us to surround the document with fake tags
+  " without creating invalid xml.
+  1s/<?xml .*?>//e
+  " insert fake tags around the entire document.
+  " This will permit us to pretty-format excerpts of
+  " XML that may contain multiple top-level elements.
+  0put ='<PrettyXML>'
+  $put ='</PrettyXML>'
+  silent %!xmllint --format -
+  " xmllint will insert an <?xml?> header. it's easy enough to delete
+  " if you don't want it.
+  " delete the fake tags
+  2d
+  $d
+  " restore the 'normal' indentation, which is one extra level
+  " too deep due to the extra tags we wrapped around the document.
+  silent %<
+  " back to home
+  1
+  " restore the filetype
+  exe "set ft=" . l:origft
+endfunction
+command! Xml call DoPrettyXML()
