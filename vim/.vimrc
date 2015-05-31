@@ -20,6 +20,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'csexton/trailertrash.vim'
 Plugin 'git@github.com:scrooloose/nerdcommenter.git'
 Plugin 'godlygeek/tabular'
+Plugin 'airblade/vim-gitgutter'
 "" OmniSharp Stuff
 "Plugin 'OmniSharp/omnisharp-vim.git'
 "Plugin 'tpope/vim-dispatch.git'
@@ -90,11 +91,14 @@ au Filetype js setlocal sts=4
 let mapleader=","
 map <Leader>w :w<Enter>
 map <Leader>q :q<Enter>
+map <Leader><Space> :noh<Enter>
 map <Tab> <C-P>
+set pastetoggle=<Leader>p
 
 " Trim whitespace on save, highight whitespace
 autocmd BufWritePre * :TrailerTrim
 hi UnwantedTrailerTrash guibg=red ctermbg=red
+hi Search cterm=NONE ctermfg=white ctermbg=red
 
 " Tabularize mappings
 nmap<Leader>t= :Tabularize /=<CR>

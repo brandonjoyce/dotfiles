@@ -19,10 +19,12 @@ alias gl='git log'
 alias pull='git pull'
 alias co='git checkout'
 alias a='git add'
+alias x='exit'
 alias serve='python -mSimpleHTTPServer'
 alias cop='bundle exec rubocop'
 alias pair='git config user.name "Brandon Joyce & Ryan Bone" && git config user.email "brandon-ryan@covermymeds.com"'
 alias justme='git config user.name "Brandon Joyce" && git config user.email "bjoyce@covermymeds.com"'
+alias hp='cd ~/Source/cmm/end_of_line; TEST_ENV=integration rs -t happy_path; cd -'
 export EDITOR='vim'
 chruby 2.0.0
 source ~/.secrets
