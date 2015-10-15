@@ -21,6 +21,10 @@ Plugin 'csexton/trailertrash.vim'
 Plugin 'git@github.com:scrooloose/nerdcommenter.git'
 Plugin 'godlygeek/tabular'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tyru/open-browser-github'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 "" OmniSharp Stuff
 "Plugin 'OmniSharp/omnisharp-vim.git'
 "Plugin 'tpope/vim-dispatch.git'
@@ -52,9 +56,18 @@ let &winheight = &lines * 5 / 10
 "Always show airline
 set laststatus=2
 let &t_Co = 256
-set listchars=trail:💩
+
+syntax enable
+
+" Dark Color Scheme
+set background=dark
 colorscheme vividchalk
-syntax on
+
+" Light Color Scheme
+set background=light
+let g:solarized_termcolors=256
+colorscheme solarized
+
 set number
 set nowrap
 set tabstop=2
@@ -70,7 +83,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-set colorcolumn=80
+set colorcolumn=100
 :imap jj <Esc>
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
