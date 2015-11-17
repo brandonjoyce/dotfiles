@@ -22,9 +22,9 @@ Plugin 'git@github.com:scrooloose/nerdcommenter.git'
 Plugin 'godlygeek/tabular'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tyru/open-browser-github'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'hrj/vim-DrawIt'
 "" OmniSharp Stuff
 "Plugin 'OmniSharp/omnisharp-vim.git'
 "Plugin 'tpope/vim-dispatch.git'
@@ -124,6 +124,35 @@ vmap<Leader>t{ :Tabularize /{<CR>
 " Ctrl-c/x to clipboard
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RENAME CURRENT FILE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'))
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>n :call RenameFile()<cr>
 
 " XML formatting
 function! DoPrettyXML()

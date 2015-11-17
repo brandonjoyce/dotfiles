@@ -80,9 +80,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Imported from .bash_profile
-source /usr/local/share/chruby/chruby.sh
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
+PATH=$PATH:/usr/local/sbin
 git config --global core.editor "/usr/bin/vim"
 export BOXEN_REDIS_IP=192.168.33.10
 eval "$(ssh-agent)"
@@ -106,7 +106,6 @@ alias pair='git config user.name "Brandon Joyce & Ryan Stocker" && git config us
 alias justme='git config user.name "Brandon Joyce" && git config user.email "bjoyce@covermymeds.com"'
 alias hp='cd ~/Source/cmm/end_of_line; TEST_ENV=integration rs -t happy_path; cd -'
 export EDITOR='vim'
-chruby 2.0.0
 source ~/.secrets
 
 export NVM_DIR="/Users/bjoyce/.nvm"
