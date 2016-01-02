@@ -1,6 +1,6 @@
-stow bash override=bash
-stow git override=git
-stow tmux override=tmux
-stow tmuxinator override=tmuxinator
-stow vim override=vim
-stow zsh override=zsh
+stow --override=bash bash
+stow --override=git git
+stow --override=tmux tmux
+stow --override=tmuxinator tmuxinator
+stow --override=vim vim
+stow --override=zsh zsh
