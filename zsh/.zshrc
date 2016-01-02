@@ -107,6 +107,7 @@ alias justme='git config user.name "Brandon Joyce" && git config user.email "bjo
 alias hp='cd ~/Source/cmm/end_of_line; TEST_ENV=integration rs -t happy_path; cd -'
 export EDITOR='vim'
 source ~/.secrets
+source ~/.projects
 
 export NVM_DIR="/Users/bjoyce/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

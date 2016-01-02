@@ -25,6 +25,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'hrj/vim-DrawIt'
+Plugin 'AndrewRadev/splitjoin.vim'
 "" OmniSharp Stuff
 "Plugin 'OmniSharp/omnisharp-vim.git'
 "Plugin 'tpope/vim-dispatch.git'
@@ -120,6 +121,10 @@ nmap<Leader>t: :Tabularize /:\zs<CR>
 vmap<Leader>t: :Tabularize /:\zs<CR>
 nmap<Leader>t{ :Tabularize /{<CR>
 vmap<Leader>t{ :Tabularize /{<CR>
+
+" Splitjoin mappings
+map <Leader>s :SplitjoinSplit<Enter>
+map <Leader>j :SplitjoinJoin<Enter>
 
 " Ctrl-c/x to clipboard
 vmap <C-x> :!pbcopy<CR>
