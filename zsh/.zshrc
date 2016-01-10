@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/bjoyce/.oh-my-zsh
+export ZSH=/home/vagrant/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +49,6 @@ plugins=(git git-prompt tmux)
 
 # User configuration
 
-export PATH="/Users/bjoyce/.gem/ruby/2.0.0/bin:/Users/bjoyce/.rubies/ruby-2.0.0-p451/lib/ruby/gems/2.0.0/bin:/Users/bjoyce/.rubies/ruby-2.0.0-p451/bin:/Users/bjoyce/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,11 +83,8 @@ PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$PATH:/usr/local/sbin
 git config --global core.editor "/usr/bin/vim"
-export BOXEN_REDIS_IP=192.168.33.10
-eval "$(ssh-agent)"
-ssh-add ~/.ssh/id_rsa
-ssh-add ~/.ssh/al_rsa
-ssh-add ~/.ssh/brandon_ryan_rsa
+
+# ALIASES
 alias be='bundle exec'
 alias rs='bundle exec rspec'
 alias cap='bundle exec cap'
@@ -104,7 +100,8 @@ alias serve='python -mSimpleHTTPServer'
 alias cop='bundle exec rubocop'
 alias pair='git config user.name "Brandon Joyce & Ryan Stocker" && git config user.email "brandon-ryan@covermymeds.com"'
 alias justme='git config user.name "Brandon Joyce" && git config user.email "bjoyce@covermymeds.com"'
-alias hp='cd ~/Source/cmm/end_of_line; TEST_ENV=integration rs -t happy_path; cd -'
+
+
 export EDITOR='vim'
 source ~/.secrets
 source ~/.projects

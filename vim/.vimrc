@@ -61,8 +61,8 @@ let &t_Co = 256
 syntax enable
 
 " Dark Color Scheme
-set background=dark
-colorscheme vividchalk
+" set background=dark
+" colorscheme vividchalk
 
 " Light Color Scheme
 set background=light
