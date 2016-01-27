@@ -103,7 +103,6 @@ alias justme='git config user.name "Brandon Joyce" && git config user.email "bjo
 
 
 export EDITOR='vim'
-source ~/.secrets
 source ~/.projects
 
 export NVM_DIR="/Users/bjoyce/.nvm"
