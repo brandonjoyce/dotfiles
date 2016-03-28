@@ -87,7 +87,7 @@ git config --global core.editor "/usr/bin/vim"
 # ALIASES
 alias be='bundle exec'
 alias rs='bundle exec rspec'
-alias becap='bundle exec cap'
+alias cap='bundle exec cap'
 alias ci='git commit -v'
 alias s='git status'
 alias d='git diff'
@@ -98,8 +98,6 @@ alias a='git add'
 alias x='exit'
 alias serve='python -mSimpleHTTPServer'
 alias cop='bundle exec rubocop'
-alias pair='git config user.name "Brandon Joyce & Ryan Stocker" && git config user.email "brandon-ryan@covermymeds.com"'
-alias justme='git config user.name "Brandon Joyce" && git config user.email "bjoyce@covermymeds.com"'
 
 export EDITOR='vim'
 
