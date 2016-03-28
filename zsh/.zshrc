@@ -101,10 +101,15 @@ alias cop='bundle exec rubocop'
 alias pair='git config user.name "Brandon Joyce & Ryan Stocker" && git config user.email "brandon-ryan@covermymeds.com"'
 alias justme='git config user.name "Brandon Joyce" && git config user.email "bjoyce@covermymeds.com"'
 
-
 export EDITOR='vim'
-source ~/.projects
-source ~/.custom
+
+if [ -d ~/projects ] ; then
+  source ~/.projects
+fi
+
+if [ 0d ~/.custom ] ; then
+  source ~/.custom
+fi
 
 export NVM_DIR="/Users/bjoyce/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
