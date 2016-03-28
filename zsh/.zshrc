@@ -87,7 +87,7 @@ git config --global core.editor "/usr/bin/vim"
 # ALIASES
 alias be='bundle exec'
 alias rs='bundle exec rspec'
-alias cap='bundle exec cap'
+alias becap='bundle exec cap'
 alias ci='git commit -v'
 alias s='git status'
 alias d='git diff'
