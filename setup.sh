@@ -1,4 +1,3 @@
-stow --override=bash bash
 stow --override=git git
 stow --override=tmux tmux
 stow --override=tmuxinator tmuxinator
