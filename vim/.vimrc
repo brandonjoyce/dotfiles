@@ -26,6 +26,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'hrj/vim-DrawIt'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'aklt/plantuml-syntax'
 "" OmniSharp Stuff
 "Plugin 'OmniSharp/omnisharp-vim.git'
 "Plugin 'tpope/vim-dispatch.git'
@@ -50,6 +52,10 @@ let g:syntastic_check_on_wq = 0
 let g:airline_powerline_fonts = 1
 let g:airline_section_a = '%4l,%3c'
 let g:airline_section_z = ''
+
+"" PlantUML config
+let g:plantuml_executable_script='plantuml'
+map <Leader>m :make<Enter>
 
 " focused window 50%
 let &winheight = &lines * 5 / 10
@@ -101,6 +107,7 @@ au Filetype js setlocal noexpandtab
 au Filetype js setlocal ts=4
 au Filetype js setlocal sw=4
 au Filetype js setlocal sts=4
+autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 
 let mapleader=","
 map <Leader>w :w<Enter>
@@ -125,6 +132,9 @@ vmap<Leader>t{ :Tabularize /{<CR>
 " Splitjoin mappings
 map <Leader>s :SplitjoinSplit<Enter>
 map <Leader>j :SplitjoinJoin<Enter>
+
+" previous buffer mapping
+map <Leader>g :b#<Enter>
 
 " Ctrl-c/x to clipboard
 vmap <C-x> :!pbcopy<CR>

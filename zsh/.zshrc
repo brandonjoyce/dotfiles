@@ -98,9 +98,14 @@ alias a='git add'
 alias x='exit'
 alias serve='python -mSimpleHTTPServer'
 alias cop='bundle exec rubocop'
-alias pair='git config user.name "Brandon Joyce & Ryan Stocker" && git config user.email "brandon-ryan@covermymeds.com"'
-alias justme='git config user.name "Brandon Joyce" && git config user.email "bjoyce@covermymeds.com"'
+alias avitunnel='sudo ssh -D 8080 -C -N sonerdy@workflow.avifoodsystems.com'
+function deploytarget() { curl --data "app_env=production&strict=1&app_name=$@" https://deploytargets.cmmint.net/lookup }
 
+# workaround for iterm + tmux + vim color scheme issue http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
+alias tmux="TERM=screen-256color-bce tmux"
+
+# Autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 export EDITOR='vim'
 source ~/.projects
