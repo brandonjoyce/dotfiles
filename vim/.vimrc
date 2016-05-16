@@ -28,6 +28,9 @@ Plugin 'hrj/vim-DrawIt'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'aklt/plantuml-syntax'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-endwise'
+Plugin 'slashmili/alchemist.vim'
 "" OmniSharp Stuff
 "Plugin 'OmniSharp/omnisharp-vim.git'
 "Plugin 'tpope/vim-dispatch.git'
@@ -65,15 +68,15 @@ set laststatus=2
 let &t_Co = 256
 
 syntax enable
+"let g:solarized_termcolors=256
 
-" Dark Color Scheme
-" set background=dark
-" colorscheme vividchalk
+"" Dark Color Scheme
+set background=dark
+colorscheme solarized
 
 " Light Color Scheme
-set background=light
-let g:solarized_termcolors=256
-colorscheme solarized
+"set background=light
+"colorscheme solarized
 
 set number
 set nowrap
@@ -108,11 +111,14 @@ au Filetype js setlocal ts=4
 au Filetype js setlocal sw=4
 au Filetype js setlocal sts=4
 autocmd BufNewFile,BufRead Gemfile set filetype=ruby
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+let g:vim_markdown_folding_disabled = 1
 
 let mapleader=","
 map <Leader>w :w<Enter>
 map <Leader>q :q<Enter>
 map <Leader><Space> :noh<Enter>
+map <Leader>b :sh<Enter>
 map <Tab> <C-P>
 set pastetoggle=<Leader>p
 

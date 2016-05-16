@@ -1,3 +1,7 @@
+ssh-add -L &> /dev/null
+if [ $? -eq 1 ]; then
+  ssh-add
+fi
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/bjoyce/.oh-my-zsh
 
@@ -101,6 +105,10 @@ alias cop='bundle exec rubocop'
 alias avitunnel='sudo ssh -D 8080 -C -N sonerdy@workflow.avifoodsystems.com'
 function deploytarget() { curl --data "app_env=production&strict=1&app_name=$@" https://deploytargets.cmmint.net/lookup }
 
+# Vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
 # workaround for iterm + tmux + vim color scheme issue http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
 alias tmux="TERM=screen-256color-bce tmux"
 
@@ -113,7 +121,7 @@ if [ -d ~/projects ] ; then
   source ~/.projects
 fi
 
-if [ 0d ~/.custom ] ; then
+if [ -d ~/.custom ] ; then
   source ~/.custom
 fi
 

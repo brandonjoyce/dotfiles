@@ -7,3 +7,6 @@ rm ~/.bash_profile
 
 # Install Tree
 yes | yum install tree
+
+# Install git-extras
+yes | yum install git-extras
