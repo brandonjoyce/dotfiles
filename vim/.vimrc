@@ -24,13 +24,14 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'hrj/vim-DrawIt'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-endwise'
 Plugin 'slashmili/alchemist.vim'
+Plugin 'uarun/vim-protobuf'
+Plugin 'janko-m/vim-test'
 "" OmniSharp Stuff
 "Plugin 'OmniSharp/omnisharp-vim.git'
 "Plugin 'tpope/vim-dispatch.git'
@@ -58,7 +59,6 @@ let g:airline_section_z = ''
 
 "" PlantUML config
 let g:plantuml_executable_script='plantuml'
-map <Leader>m :make<Enter>
 
 " focused window 50%
 let &winheight = &lines * 5 / 10
@@ -67,16 +67,10 @@ let &winheight = &lines * 5 / 10
 set laststatus=2
 let &t_Co = 256
 
+colorscheme zenburn
 syntax enable
-"let g:solarized_termcolors=256
-
-"" Dark Color Scheme
-set background=dark
-colorscheme solarized
-
-" Light Color Scheme
-"set background=light
-"colorscheme solarized
+colors zenburn
+set t_ut=
 
 set number
 set nowrap
@@ -94,6 +88,7 @@ set smartcase
 set hlsearch
 set incsearch
 set colorcolumn=100
+
 :imap jj <Esc>
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
@@ -134,6 +129,13 @@ nmap<Leader>t: :Tabularize /:\zs<CR>
 vmap<Leader>t: :Tabularize /:\zs<CR>
 nmap<Leader>t{ :Tabularize /{<CR>
 vmap<Leader>t{ :Tabularize /{<CR>
+
+" vim-test mappings
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 " Splitjoin mappings
 map <Leader>s :SplitjoinSplit<Enter>

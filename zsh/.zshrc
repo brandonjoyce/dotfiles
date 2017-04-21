@@ -103,6 +103,9 @@ alias x='exit'
 alias serve='python -mSimpleHTTPServer'
 alias cop='bundle exec rubocop'
 alias avitunnel='sudo ssh -D 8080 -C -N sonerdy@workflow.avifoodsystems.com'
+alias e='emacs'
+alias mt='mix test'
+alias rmcontainers='docker kill $(docker ps -q); docker rm $(docker ps -a -q);'
 function deploytarget() { curl --data "app_env=production&strict=1&app_name=$@" https://deploytargets.cmmint.net/lookup }
 
 # Vi mode
