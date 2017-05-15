@@ -117,6 +117,9 @@ map <Leader>b :sh<Enter>
 map <Tab> <C-P>
 set pastetoggle=<Leader>p
 
+" Previous Buffer
+map <Leader><Leader> <C-^>
+
 " Trim whitespace on save, highight whitespace
 autocmd BufWritePre * :TrailerTrim
 hi UnwantedTrailerTrash guibg=red ctermbg=red
