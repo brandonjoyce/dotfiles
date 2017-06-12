@@ -88,6 +88,7 @@ set smartcase
 set hlsearch
 set incsearch
 set colorcolumn=100
+set eol
 
 :imap jj <Esc>
 if executable('ag')

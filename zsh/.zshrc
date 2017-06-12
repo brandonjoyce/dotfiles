@@ -106,6 +106,7 @@ alias avitunnel='sudo ssh -D 8080 -C -N sonerdy@workflow.avifoodsystems.com'
 alias e='emacs'
 alias mt='mix test'
 alias killdocks='docker stop $(docker ps -q); docker rm $(docker ps -a -q);docker rmi -f $(docker images -a -q);docker volume rm $(docker volume ls -f dangling=true -q)'
+alias killcontainers='docker stop $(docker ps -q); docker rm $(docker ps -a -q);docker volume rm $(docker volume ls -f dangling=true -q)'
 function deploytarget() { curl --data "app_env=production&strict=1&app_name=$@" https://deploytargets.cmmint.net/lookup }
 
 # Vi mode
@@ -128,5 +129,13 @@ if [ -d ~/.custom ] ; then
   source ~/.custom
 fi
 
+if [ -f ~/.secrets ] ; then
+  source ~/.secrets
+fi
+
 export NVM_DIR="/Users/bjoyce/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
