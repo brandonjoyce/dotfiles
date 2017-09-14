@@ -67,12 +67,11 @@ let &winheight = &lines * 5 / 10
 set laststatus=2
 let &t_Co = 256
 
-colorscheme zenburn
 syntax enable
-colors zenburn
+colorscheme solarized
+set background=dark
 set t_ut=
 
-set number
 set nowrap
 set tabstop=2
 set softtabstop=2
@@ -114,7 +113,7 @@ let mapleader=","
 map <Leader>w :w<Enter>
 map <Leader>q :q<Enter>
 map <Leader><Space> :noh<Enter>
-map <Leader>b :sh<Enter>
+map <Leader>b orequire IEx<Enter>IEx.pry<ESC>
 map <Tab> <C-P>
 set pastetoggle=<Leader>p
 
@@ -209,4 +208,19 @@ function! DoPrettyXML()
   " restore the filetype
   exe "set ft=" . l:origft
 endfunction
+
+" Line numbers
+" http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
+set number
+" toggle how line numbers are show
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set rnu!
+    set nu
+  else
+    set rnu
+  endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<cr>
+
 command! Xml call DoPrettyXML()

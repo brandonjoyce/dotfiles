@@ -86,6 +86,7 @@ source $ZSH/oh-my-zsh.sh
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/Users/bjoyce/go/bin
 git config --global core.editor "/usr/bin/vim"
 
 # ALIASES
