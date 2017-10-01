@@ -89,6 +89,12 @@ PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/Users/bjoyce/go/bin
 git config --global core.editor "/usr/bin/vim"
 
+# AWS Code Commit env vars (using for docker container access to code commit)
+export CODE_COMMIT_PUBLIC_KEY=`cat ~/.ssh/codecommit_rsa.pub`
+export CODE_COMMIT_PRIVATE_KEY=`cat ~/.ssh/codecommit_rsa`
+export CODE_COMMIT_SSH_KEY_ID=`cat ~/.ssh/codecommit_ssh_key_id`
+
+
 # ALIASES
 alias be='bundle exec'
 alias rs='bundle exec rspec'
