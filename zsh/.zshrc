@@ -112,13 +112,17 @@ alias cop='bundle exec rubocop'
 alias avitunnel='sudo ssh -D 8080 -C -N sonerdy@workflow.avifoodsystems.com'
 alias e='emacs'
 alias mt='mix test'
-alias killdocks='docker stop $(docker ps -q); docker rm $(docker ps -a -q);docker rmi -f $(docker images -a -q);docker volume rm $(docker volume ls -f dangling=true -q)'
-alias killcontainers='docker stop $(docker ps -q); docker rm $(docker ps -a -q);docker volume rm $(docker volume ls -f dangling=true -q)'
+alias killdocks='docker kill $(docker ps -q)'
+alias rmdocks='docker rm $(docker ps -a -q)'
+
 function deploytarget() { curl --data "app_env=production&strict=1&app_name=$@" https://deploytargets.cmmint.net/lookup }
 
 # Vi mode
 bindkey -v
 export KEYTIMEOUT=1
+
+# Reverse Lookup
+bindkey '^R' history-incremental-search-backward
 
 # workaround for iterm + tmux + vim color scheme issue http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
 alias tmux="TERM=screen-256color-bce tmux"
@@ -146,3 +150,14 @@ export NVM_DIR="/Users/bjoyce/.nvm"
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
+
+# https://direnv.net/
+eval "$(direnv hook zsh)"
+
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

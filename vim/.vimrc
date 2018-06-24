@@ -12,7 +12,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
@@ -32,6 +32,9 @@ Plugin 'tpope/vim-endwise'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'uarun/vim-protobuf'
 Plugin 'janko-m/vim-test'
+Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'vim-scripts/SyntaxRange'
+Plugin 'vim-scripts/ingo-library'
 "" OmniSharp Stuff
 "Plugin 'OmniSharp/omnisharp-vim.git'
 "Plugin 'tpope/vim-dispatch.git'
@@ -69,7 +72,7 @@ let &t_Co = 256
 
 syntax enable
 colorscheme solarized
-set background=dark
+set background=light
 set t_ut=
 
 set nowrap
