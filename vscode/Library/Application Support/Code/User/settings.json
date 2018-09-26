@@ -1,0 +1,25 @@
+{
+    "workbench.colorTheme": "Solarized Light",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "w"],
+            "commands": [":w"]
+        },
+        {
+            "before": ["<leader>", "q"],
+            "commands": [":q"]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.leader": ",",
+    "vim.useSystemClipboard": true,
+    "window.zoomLevel": 1,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "workbench.editor.enablePreview": false
+}
