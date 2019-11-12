@@ -35,7 +35,6 @@ Plugin 'janko-m/vim-test'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'vim-scripts/SyntaxRange'
 Plugin 'vim-scripts/ingo-library'
-"" OmniSharp Stuff
 "Plugin 'OmniSharp/omnisharp-vim.git'
 "Plugin 'tpope/vim-dispatch.git'
 "Plugin 'scrooloose/syntastic'
@@ -60,7 +59,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_section_a = '%4l,%3c'
 let g:airline_section_z = ''
 
-"" PlantUML config
+" PlantUML config
 let g:plantuml_executable_script='plantuml'
 
 " focused window 50%
@@ -72,7 +71,8 @@ let &t_Co = 256
 
 syntax enable
 colorscheme solarized
-set background=light
+set background=dark
+"set background=light
 set t_ut=
 
 set nowrap
@@ -108,9 +108,13 @@ au Filetype js setlocal noexpandtab
 au Filetype js setlocal ts=4
 au Filetype js setlocal sw=4
 au Filetype js setlocal sts=4
+"CSharp uses tabs
+au FileType cs setlocal noexpandtab
 autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 let g:vim_markdown_folding_disabled = 1
+"Tabs stuff
+autocmd BufWrite * :retab!
 
 let mapleader=","
 map <Leader>w :w<Enter>

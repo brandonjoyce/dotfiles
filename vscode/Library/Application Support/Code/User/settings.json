@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "Solarized Light",
     "vim.normalModeKeyBindings": [
         {
             "before": ["<leader>", "w"],
@@ -18,8 +17,10 @@
     ],
     "vim.leader": ",",
     "vim.useSystemClipboard": true,
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "files.insertFinalNewline": true,
+    "diffEditor.renderSideBySide": false
 }

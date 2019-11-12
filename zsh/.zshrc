@@ -94,6 +94,8 @@ export CODE_COMMIT_PUBLIC_KEY=`cat ~/.ssh/codecommit_rsa.pub`
 export CODE_COMMIT_PRIVATE_KEY=`cat ~/.ssh/codecommit_rsa`
 export CODE_COMMIT_SSH_KEY_ID=`cat ~/.ssh/codecommit_ssh_key_id`
 
+# history in iex console
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 # ALIASES
 alias be='bundle exec'
@@ -113,7 +115,7 @@ alias avitunnel='sudo ssh -D 8080 -C -N sonerdy@workflow.avifoodsystems.com'
 alias e='emacs'
 alias mt='mix test'
 alias killdocks='docker kill $(docker ps -q)'
-alias rmdocks='docker rm $(docker ps -a -q)'
+alias acr-login='az login && az acr login --name covermymedstesting && az acr login --name covermymeds'
 
 function deploytarget() { curl --data "app_env=production&strict=1&app_name=$@" https://deploytargets.cmmint.net/lookup }
 
