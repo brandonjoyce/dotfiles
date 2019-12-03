@@ -98,6 +98,7 @@ export CODE_COMMIT_SSH_KEY_ID=`cat ~/.ssh/codecommit_ssh_key_id`
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # ALIASES
+alias dc='docker-compose'
 alias be='bundle exec'
 alias rs='bundle exec rspec'
 alias cap='bundle exec cap'
