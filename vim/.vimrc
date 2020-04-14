@@ -21,7 +21,7 @@ Plugin 'csexton/trailertrash.vim'
 Plugin 'git@github.com:scrooloose/nerdcommenter.git'
 Plugin 'godlygeek/tabular'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'lifepillar/vim-solarized8'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -70,7 +70,7 @@ set laststatus=2
 let &t_Co = 256
 
 syntax enable
-colorscheme solarized
+colorscheme solarized8
 set background=dark
 "set background=light
 set t_ut=
