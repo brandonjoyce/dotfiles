@@ -112,13 +112,9 @@ alias a='git add'
 alias x='exit'
 alias serve='python -mSimpleHTTPServer'
 alias cop='bundle exec rubocop'
-alias avitunnel='sudo ssh -D 8080 -C -N sonerdy@workflow.avifoodsystems.com'
 alias e='emacs'
 alias mt='mix test'
 alias killdocks='docker kill $(docker ps -q)'
-alias acr-login='az login && az acr login --name covermymedstesting && az acr login --name covermymeds'
-
-function deploytarget() { curl --data "app_env=production&strict=1&app_name=$@" https://deploytargets.cmmint.net/lookup }
 
 # Vi mode
 bindkey -v
@@ -156,11 +152,3 @@ export NVM_DIR="/Users/bjoyce/.nvm"
 
 # https://direnv.net/
 eval "$(direnv hook zsh)"
-
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
