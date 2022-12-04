@@ -22,6 +22,7 @@ Plugin 'git@github.com:scrooloose/nerdcommenter.git'
 Plugin 'godlygeek/tabular'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'lifepillar/vim-solarized8'
+Plugin 'tomasiser/vim-code-dark'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -35,6 +36,7 @@ Plugin 'janko-m/vim-test'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'vim-scripts/SyntaxRange'
 Plugin 'vim-scripts/ingo-library'
+Plugin 'tpope/vim-abolish.git'
 "Plugin 'OmniSharp/omnisharp-vim.git'
 "Plugin 'tpope/vim-dispatch.git'
 "Plugin 'scrooloose/syntastic'
@@ -68,6 +70,8 @@ let &winheight = &lines * 5 / 10
 "Always show airline
 set laststatus=2
 let &t_Co = 256
+
+let g:airline_theme = 'codedark'
 
 syntax enable
 colorscheme solarized8
@@ -116,13 +120,16 @@ let g:vim_markdown_folding_disabled = 1
 "Tabs stuff
 autocmd BufWrite * :retab!
 
-let mapleader=","
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 map <Leader>w :w<Enter>
 map <Leader>q :q<Enter>
-map <Leader><Space> :noh<Enter>
-map <Leader>b orequire IEx<Enter>IEx.pry<ESC>
+map <Leader>/ :noh<Enter>
 map <Tab> <C-P>
-set pastetoggle=<Leader>p
+
+" Elixir
+map <Leader>b orequire IEx<Enter>IEx.pry<ESC>
+map <Leader>i o\|> IO.inspect()<ESC>
 
 " Previous Buffer
 map <Leader><Leader> <C-^>
@@ -219,6 +226,7 @@ endfunction
 " Line numbers
 " http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
 set number
+set nu
 " toggle how line numbers are show
 function! NumberToggle()
   if(&relativenumber == 1)

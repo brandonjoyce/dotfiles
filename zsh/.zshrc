@@ -1,15 +1,23 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ssh-add -L &> /dev/null
 if [ $? -eq 1 ]; then
   ssh-add
 fi
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/bjoyce/.oh-my-zsh
+export ZSH=/Users/brandon/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -86,13 +94,7 @@ source $ZSH/oh-my-zsh.sh
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$PATH:/usr/local/sbin
-PATH=$PATH:/Users/bjoyce/go/bin
 git config --global core.editor "/usr/bin/vim"
-
-# AWS Code Commit env vars (using for docker container access to code commit)
-export CODE_COMMIT_PUBLIC_KEY=`cat ~/.ssh/codecommit_rsa.pub`
-export CODE_COMMIT_PRIVATE_KEY=`cat ~/.ssh/codecommit_rsa`
-export CODE_COMMIT_SSH_KEY_ID=`cat ~/.ssh/codecommit_ssh_key_id`
 
 # history in iex console
 export ERL_AFLAGS="-kernel shell_history enabled"
@@ -104,6 +106,7 @@ alias rs='bundle exec rspec'
 alias cap='bundle exec cap'
 alias ci='git commit -v'
 alias s='git status'
+alias c='clear'
 alias d='git diff'
 alias gl='git log'
 alias pull='git pull'
@@ -115,6 +118,7 @@ alias cop='bundle exec rubocop'
 alias e='emacs'
 alias mt='mix test'
 alias killdocks='docker kill $(docker ps -q)'
+alias gpo='git push -u origin $(git branch --show-current)'
 
 # Vi mode
 bindkey -v
@@ -124,31 +128,18 @@ export KEYTIMEOUT=1
 bindkey '^R' history-incremental-search-backward
 
 # workaround for iterm + tmux + vim color scheme issue http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
-alias tmux="TERM=screen-256color-bce tmux"
+#alias tmux="TERM=screen-256color-bce tmux"
 
 # Autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 export EDITOR='vim'
 
-if [ -d ~/projects ] ; then
-  source ~/.projects
-fi
-
-if [ -d ~/.custom ] ; then
-  source ~/.custom
-fi
-
-if [ -f ~/.secrets ] ; then
-  source ~/.secrets
-fi
-
-export NVM_DIR="/Users/bjoyce/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
-
 # https://direnv.net/
 eval "$(direnv hook zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+export JAVA_HOME=/usr/local/opt/openjdk/bin/java
