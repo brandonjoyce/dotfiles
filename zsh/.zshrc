@@ -1,14 +1,19 @@
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 ssh-add -L &> /dev/null
 if [ $? -eq 1 ]; then
   ssh-add
 fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/brandon/.oh-my-zsh
 
@@ -16,8 +21,8 @@ export ZSH=/Users/brandon/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -96,6 +101,9 @@ PATH=$HOME/bin:$PATH
 PATH=$PATH:/usr/local/sbin
 git config --global core.editor "/usr/bin/vim"
 
+# asdf told me to do it
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 # history in iex console
 export ERL_AFLAGS="-kernel shell_history enabled"
 
@@ -119,6 +127,7 @@ alias e='emacs'
 alias mt='mix test'
 alias killdocks='docker kill $(docker ps -q)'
 alias gpo='git push -u origin $(git branch --show-current)'
+alias vim='nvim'
 
 # Vi mode
 bindkey -v
@@ -128,7 +137,7 @@ export KEYTIMEOUT=1
 bindkey '^R' history-incremental-search-backward
 
 # workaround for iterm + tmux + vim color scheme issue http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
-#alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=screen-256color-bce tmux"
 
 # Autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
@@ -143,3 +152,4 @@ eval "$(direnv hook zsh)"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 export JAVA_HOME=/usr/local/opt/openjdk/bin/java
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"

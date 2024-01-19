@@ -76,7 +76,7 @@ let g:airline_theme = 'codedark'
 syntax enable
 colorscheme solarized8
 set background=dark
-"set background=light
+" set background=light
 set t_ut=
 
 set nowrap
