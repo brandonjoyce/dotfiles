@@ -127,10 +127,6 @@ map <Leader>q :q<Enter>
 map <Leader>/ :noh<Enter>
 map <Tab> <C-P>
 
-" Elixir
-map <Leader>b orequire IEx<Enter>IEx.pry<ESC>
-map <Leader>i o\|> IO.inspect()<ESC>
-
 " Previous Buffer
 map <Leader><Leader> <C-^>
 
