@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["nvim-tmux-navigation"] = {
+    loaded = true,
+    path = "/Users/brandon/.local/share/nvim/site/pack/packer/start/nvim-tmux-navigation",
+    url = "https://github.com/alexghergh/nvim-tmux-navigation"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/brandon/.local/share/nvim/site/pack/packer/start/nvim-treesitter",

@@ -4,13 +4,13 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+	-- Packer can manage itself
+	use 'wbthomason/packer.nvim'
 
-  use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  }
+	use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.5',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
 
 	use {
 		'rose-pine/neovim',
@@ -18,11 +18,13 @@ return require('packer').startup(function(use)
 	}
 
 	use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-    }
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+			ts_update()
+		end,
+	}
+
+	use { "alexghergh/nvim-tmux-navigation" }
 
 end)
