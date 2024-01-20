@@ -26,5 +26,5 @@ return require('packer').startup(function(use)
 	}
 
 	use { "alexghergh/nvim-tmux-navigation" }
-
+	use('tpope/vim-fugitive')
 end)

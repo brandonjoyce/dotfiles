@@ -1,6 +1,4 @@
 require("bjoyce.packer")
 require("bjoyce.theme")
 require("bjoyce.remap")
-require("bjoyce.treesitter")
-require("bjoyce.tmux")
 
