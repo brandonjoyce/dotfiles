@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
 		'NLKNguyen/papercolor-theme',
 		as = 'papercolor'
 	}
+    -- Light/Dark MacOS notify for switching themes
+    use 'cormacrelf/dark-notify'
 
 	use {
 		'nvim-treesitter/nvim-treesitter',

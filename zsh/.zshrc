@@ -142,7 +142,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 # Autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-export EDITOR='vim'
+export VISUAL=nvim
+export EDITOR="$VISUAL"
 
 # https://direnv.net/
 eval "$(direnv hook zsh)"
