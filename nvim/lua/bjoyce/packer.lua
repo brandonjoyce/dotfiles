@@ -15,8 +15,8 @@ return require('packer').startup(function(use)
 
     -- theme
 	use {
-		'rose-pine/neovim',
-		as = 'rose-pine'
+		'NLKNguyen/papercolor-theme',
+		as = 'papercolor'
 	}
 
 	use {
