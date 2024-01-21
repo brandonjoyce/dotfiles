@@ -7,11 +7,13 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.5',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.5',
+        requires = { {'nvim-lua/plenary.nvim'} },
+    }
 
+    -- theme
 	use {
 		'rose-pine/neovim',
 		as = 'rose-pine'
@@ -25,7 +27,10 @@ return require('packer').startup(function(use)
 		end,
 	}
 
+    -- use hjkl movement keys to navigate vim panes and tmux panes
 	use { "alexghergh/nvim-tmux-navigation" }
+
+    -- Git stuff
 	use('tpope/vim-fugitive')
 
 	-- Language server and auto-complete stuff
@@ -46,4 +51,6 @@ return require('packer').startup(function(use)
 		}
 	}
 
+    -- Split/Join (gS/gJ)
+    use 'AndrewRadev/splitjoin.vim'
 end)
