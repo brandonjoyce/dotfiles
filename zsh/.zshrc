@@ -144,6 +144,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+git config --global core.editor "nvim"
 
 # https://direnv.net/
 eval "$(direnv hook zsh)"
