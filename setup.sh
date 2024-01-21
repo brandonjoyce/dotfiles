@@ -19,3 +19,8 @@ brew install ag
 
 # https://github.com/cormacrelf/dark-notify/
 brew install cormacrelf/tap/dark-notify
+mkdir ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch
+cp auto_switch_theme.py ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch/
+
+echo "make sure to enable the iTerm Python API"
+
