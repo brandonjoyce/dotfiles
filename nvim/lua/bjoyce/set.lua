@@ -5,13 +5,18 @@ vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = false
 
--- indents & wrapping
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+-- tab, indents & wrapping
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.opt.autoindent = true
+vim.opt.copyindent = true
 vim.opt.wrap = false
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- swap & undo
 vim.opt.swapfile = false
