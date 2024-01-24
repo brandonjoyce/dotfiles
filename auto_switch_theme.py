@@ -3,8 +3,8 @@
 import asyncio
 import iterm2
 
-THEME_LIGHT = "papercolor-light"
-THEME_DARK = "papercolor-dark"
+THEME_LIGHT = "catppuccin-latte"
+THEME_DARK = "catppuccin-frappe"
 
 
 class AutoSwitchTheme:
