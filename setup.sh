@@ -36,5 +36,10 @@ brew install cormacrelf/tap/dark-notify
 mkdir -p ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch
 cp auto_switch_theme.py ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch/
 
+# Packer (Neovim package manager)
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 echo "make sure to enable the iTerm Python API"
+echo "make sure to import the papercolor theme into iterm"
 

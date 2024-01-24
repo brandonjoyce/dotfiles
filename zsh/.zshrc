@@ -6,7 +6,7 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 ssh-add -L &> /dev/null
@@ -100,9 +100,6 @@ PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$PATH:/usr/local/sbin
 git config --global core.editor "/usr/bin/vim"
-
-# asdf told me to do it
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # history in iex console
 export ERL_AFLAGS="-kernel shell_history enabled"

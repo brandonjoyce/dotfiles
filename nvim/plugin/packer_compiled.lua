@@ -99,10 +99,20 @@ _G.packer_plugins = {
     path = "/Users/brandon/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["dark-notify"] = {
+    loaded = true,
+    path = "/Users/brandon/.local/share/nvim/site/pack/packer/start/dark-notify",
+    url = "https://github.com/cormacrelf/dark-notify"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/brandon/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["lsp-zero.nvim"] = {
+    loaded = true,
+    path = "/Users/brandon/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -139,15 +149,20 @@ _G.packer_plugins = {
     path = "/Users/brandon/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  papercolor = {
+    loaded = true,
+    path = "/Users/brandon/.local/share/nvim/site/pack/packer/start/papercolor",
+    url = "https://github.com/NLKNguyen/papercolor-theme"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/brandon/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["rose-pine"] = {
+  ["splitjoin.vim"] = {
     loaded = true,
-    path = "/Users/brandon/.local/share/nvim/site/pack/packer/start/rose-pine",
-    url = "https://github.com/rose-pine/neovim"
+    path = "/Users/brandon/.local/share/nvim/site/pack/packer/start/splitjoin.vim",
+    url = "https://github.com/AndrewRadev/splitjoin.vim"
   },
   ["telescope.nvim"] = {
     loaded = true,
