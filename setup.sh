@@ -19,6 +19,10 @@ brew install powerlevel10k
 asdf plugin-add python
 asdf install python 3.12.1
 
+# might as well have nodejs
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf install nodejs 21.6.1
+
 # install Elixir
 asdf plugin-add elixir
 asdf install elixir 1.15.4-otp-25
