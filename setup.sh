@@ -21,7 +21,8 @@ asdf install python 3.12.1
 
 # might as well have nodejs
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs 21.6.1
+asdf install nodejs 20.11.0
+asdf global nodejs 20.11.0
 
 # install Elixir
 asdf plugin-add elixir
