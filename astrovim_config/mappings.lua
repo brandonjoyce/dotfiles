@@ -18,6 +18,9 @@ return {
     --   desc = "Previous buffer",
     -- },
 
+    -- Copy an individual line's Github link
+    ["<leader>go"] = {":GithubLink<Enter>", desc = "Copy Github Link"},
+
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
       function()
@@ -33,6 +36,10 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     
+  },
+  v = {
+    -- Copy a range of lines' Github link
+    ["<leader>go"] = {":GithubLink<Enter>", desc = "Copy Github Link"},
   },
   t = {
     -- setting a mapping to false will disable it
