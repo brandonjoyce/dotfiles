@@ -18,7 +18,8 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin-latte",
+  -- colorscheme = "catppuccin-latte",
+  colorscheme = "catppuccin-frappe",
   -- colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
