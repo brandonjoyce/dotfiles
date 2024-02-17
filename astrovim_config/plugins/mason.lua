@@ -13,6 +13,7 @@ return {
         "lemminx",
         "lua_ls",
         "pylsp",
+        "sqlls",
         "terraformls",
         "tflint",
         "tsserver"

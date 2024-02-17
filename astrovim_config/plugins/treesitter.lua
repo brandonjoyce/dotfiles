@@ -15,8 +15,10 @@ return {
       "markdown",
       "python",
       "ruby",
+      "sql",
       "terraform",
-      "typescript",
+      -- TODO: this is erroring for .ts files?
+      -- "typescript",
       "xml"
     })
   end,
