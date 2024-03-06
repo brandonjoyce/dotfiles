@@ -30,12 +30,15 @@ return {
       end,
       desc = "Pick to close",
     },
+    -- next buffer shortcut ctrl + k
+    ["<C-k>"] = {":bnext<Enter>", desc = "Next Buffer"},
+    -- previous buffer shortcut ctrl + j
+    ["<C-j>"] = {":bprevious<Enter>", desc = "Previous Buffer"},
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-    
   },
   v = {
     -- Copy a range of lines' Github link
