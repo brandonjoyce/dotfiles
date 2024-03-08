@@ -103,6 +103,7 @@ alias mt='mix test'
 alias killdocks='docker kill $(docker ps -q)'
 alias gpo='git push -u origin $(git branch --show-current)'
 alias vim='nvim'
+alias mtw='mix test.watch'
 
 # Vi mode
 bindkey -v
