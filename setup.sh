@@ -9,8 +9,10 @@ brew install tmux
 # view folder tree
 brew install tree
 
-# silver searcher
+# search tools
 brew install ag
+brew install ripgrep
+brew install fd
 
 # ZSH Theme
 brew install powerlevel10k
