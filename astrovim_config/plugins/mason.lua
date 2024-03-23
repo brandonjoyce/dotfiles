@@ -16,7 +16,8 @@ return {
         "sqlls",
         "terraformls",
         "tflint",
-        "tsserver"
+        "tsserver",
+        "yamlls"
       })
     end,
   },
