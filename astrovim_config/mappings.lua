@@ -47,5 +47,6 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+    ["<esc>"] = { "<C-\\><C-n>", desc = "Exit Insert Mode (terminal)" },
   },
 }
