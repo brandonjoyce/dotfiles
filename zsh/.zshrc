@@ -84,9 +84,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 # ALIASES
 alias dc='docker-compose'
-alias be='bundle exec'
-alias rs='bundle exec rspec'
-alias cap='bundle exec cap'
 alias ci='git commit -v'
 alias s='git status'
 alias c='clear'
@@ -97,8 +94,6 @@ alias co='git checkout'
 alias a='git add'
 alias x='exit'
 alias serve='python -mSimpleHTTPServer'
-alias cop='bundle exec rubocop'
-alias e='emacs'
 alias mt='mix test'
 alias killdocks='docker kill $(docker ps -q)'
 alias gpo='git push -u origin $(git branch --show-current)'
@@ -107,6 +102,7 @@ alias mtw='mix test.watch'
 
 # Vi mode
 bindkey -v
+# 10ms for key sequences
 export KEYTIMEOUT=1
 
 # Reverse Lookup
