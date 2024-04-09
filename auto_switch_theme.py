@@ -3,8 +3,8 @@
 import asyncio
 import iterm2
 
-THEME_LIGHT = "github_light"
-THEME_DARK = "github_dark"
+THEME_LIGHT = "catppuccin-latte"
+THEME_DARK = "catppuccin-frappe"
 
 
 class AutoSwitchTheme:
