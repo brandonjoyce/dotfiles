@@ -19,7 +19,7 @@ return {
     -- },
 
     -- Copy an individual line's Github link
-    ["<leader>go"] = {":GithubLink<Enter>", desc = "Copy Github Link"},
+    ["<leader>go"] = { ":GithubLink<Enter>", desc = "Copy Github Link" },
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
@@ -30,10 +30,6 @@ return {
       end,
       desc = "Pick to close",
     },
-    -- next buffer shortcut ctrl + k
-    ["<C-k>"] = {":bnext<Enter>", desc = "Next Buffer"},
-    -- previous buffer shortcut ctrl + j
-    ["<C-j>"] = {":bprevious<Enter>", desc = "Previous Buffer"},
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
@@ -42,7 +38,7 @@ return {
   },
   v = {
     -- Copy a range of lines' Github link
-    ["<leader>go"] = {":GithubLink<Enter>", desc = "Copy Github Link"},
+    ["<leader>go"] = { ":GithubLink<Enter>", desc = "Copy Github Link" },
   },
   t = {
     -- setting a mapping to false will disable it
