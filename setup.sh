@@ -40,7 +40,7 @@ stow --override=vim vim
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 # link the astrovim custom config
-ln -s ~/dotfiles/astrovim_config ~/.config/nvim/lua/user
+ln -s ~/dotfiles/astrovim_v4 ~/.config/nvim
 
 # ZSH
 rm ~/.zshrc
