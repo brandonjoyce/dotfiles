@@ -8,5 +8,6 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.recipes.heirline-vscode-winbar" },
   -- import/override with your plugins folder
 }
