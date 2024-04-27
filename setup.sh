@@ -14,6 +14,9 @@ brew install ag
 brew install ripgrep
 brew install fd
 
+# git hooks
+brew install lefthook
+
 # ZSH Theme
 brew install powerlevel10k
 
