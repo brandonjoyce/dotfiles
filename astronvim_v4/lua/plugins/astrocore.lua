@@ -68,6 +68,10 @@ return {
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
       },
+      i = {
+        -- jj to exit insert mode
+        ["jj"] = { "<Esc>", desc = "Exit Insert Mode" },
+      },
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
