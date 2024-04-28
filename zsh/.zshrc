@@ -125,5 +125,8 @@ eval "$(direnv hook zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
+# make psql work
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
 export JAVA_HOME=/usr/local/opt/openjdk/bin/java
 export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"

@@ -20,6 +20,9 @@ brew install lefthook
 # ZSH Theme
 brew install powerlevel10k
 
+# install postgres tools (psql)
+brew install libpq
+
 # might as well have python
 asdf plugin-add python
 asdf install python 3.12.1
