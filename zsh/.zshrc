@@ -83,7 +83,7 @@ git config --global core.editor "/usr/bin/vim"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # ALIASES
-alias dc='docker-compose'
+alias dc='docker compose'
 alias ci='git commit -v'
 alias s='git status'
 alias c='clear'
