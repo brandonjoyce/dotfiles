@@ -1,14 +1,3 @@
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-
 ssh-add -L &> /dev/null
 if [ $? -eq 1 ]; then
   ssh-add
@@ -21,7 +10,7 @@ export ZSH=/Users/brandon/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -97,7 +86,6 @@ alias serve='python -mSimpleHTTPServer'
 alias mt='mix test'
 alias killdocks='docker kill $(docker ps -q)'
 alias gpo='git push -u origin $(git branch --show-current)'
-alias vim='nvim'
 alias mtw='mix test.watch'
 
 # Vi mode
