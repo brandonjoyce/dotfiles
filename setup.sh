@@ -1,10 +1,10 @@
 brew install asdf
 brew install wget
 brew install nvim
+brew install tmux
 
 # for managing symlinks
 brew install stow
-brew install tmux
 
 # view folder tree
 brew install tree
@@ -13,9 +13,11 @@ brew install tree
 brew install ag
 brew install ripgrep
 brew install fd
+brew install fzf
 
-# git hooks
+# git helpers
 brew install lefthook
+brew install lazygit
 
 # ZSH Theme
 brew install powerlevel10k
@@ -32,32 +34,21 @@ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs 20.11.0
 asdf global nodejs 20.11.0
 
+# install Erlang
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf install erlang 26.2.5.7
+asdf set -u erlang 26.2.5.7
+
 # install Elixir
-asdf plugin-add elixir
-asdf install elixir 1.15.4-otp-25
+asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf install elixir 1.17.3-otp-26
+asdf set -u elixir 1.17.3-otp-26
 
 stow --override=git git
 stow --override=tmux tmux
-
-# Vim classic (I've moved to NeoVim, but this is still here because why not)
-stow --override=vim vim
-
-# install astrovim
-git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-
-# link the astrovim custom config
-ln -s ~/dotfiles/astrovim_v4 ~/.config/nvim
+stow --override=nvim tmux
+stow --adopt -t ~/.config nvim
 
 # ZSH
 rm ~/.zshrc
 stow --override=zsh zsh
-
-# https://github.com/cormacrelf/dark-notify/
-brew install cormacrelf/tap/dark-notify
-mkdir -p ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch
-cp auto_switch_theme.py ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch/
-
-# install nerd fonts
-brew tap homebrew/cask-fonts
-brew install font-hack-nerd-font
-
