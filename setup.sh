@@ -51,10 +51,9 @@ asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git || true
 asdf install elixir 1.17.3-otp-26
 asdf set -u elixir 1.17.3-otp-26
 
-stow --override=git git
 stow --override=tmux tmux
-# stow --override=nvim nvim
 stow --adopt -t ~/.config nvim
+stow --adopt -t ~/.config git
 
 # ZSH
 rm -f ~/.zshrc
