@@ -1,3 +1,6 @@
 [core]
 	editor = nvim
 	excludesfile = /Users/brandon/.gitignore_global
+[user]
+	name = Brandon Joyce
+	email = bjoyce@bitfreighter.com
