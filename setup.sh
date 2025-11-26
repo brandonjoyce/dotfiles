@@ -58,3 +58,8 @@ stow --adopt -t ~/.config git
 # ZSH
 rm -f ~/.zshrc
 stow --override=zsh zsh
+
+# https://github.com/tmux-plugins/tpm
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
