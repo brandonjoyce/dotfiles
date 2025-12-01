@@ -5,6 +5,8 @@ brew install asdf
 brew install wget
 brew install nvim
 brew install tmux
+brew install zoxide
+brew install sesh
 
 # for managing symlinks
 brew install stow

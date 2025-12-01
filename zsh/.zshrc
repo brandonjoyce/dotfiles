@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-prompt tmux)
+plugins=(git git-prompt tmux zoxide)
 
 # User configuration
 
@@ -88,6 +88,7 @@ alias killdocks='docker kill $(docker ps -q)'
 alias gpo='git push -u origin $(git branch --show-current)'
 alias mtw='mix test.watch'
 alias vim='nvim'
+alias sc='sesh connect $(sesh list | fzf)'
 
 # Vi mode
 bindkey -v
@@ -119,3 +120,4 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 export JAVA_HOME=/usr/local/opt/openjdk/bin/java
 export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+
