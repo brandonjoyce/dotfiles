@@ -7,6 +7,7 @@ brew install nvim
 brew install tmux
 brew install zoxide
 brew install sesh
+brew install shortcat
 
 # for managing symlinks
 brew install stow
